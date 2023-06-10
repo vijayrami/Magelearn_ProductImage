@@ -1,0 +1,22 @@
+{
+    "name": "magelearn/module-ProductImage",
+    "description": "Magento2 image attachment in product add/edit admin form and display image on product page",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "email": "vijaymrami@gmail.com",
+            "name": "vijay rami"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magelearn\\ProductImage\\": ""
+        }
+    }
+}

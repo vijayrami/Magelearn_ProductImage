@@ -1,0 +1,17 @@
+<?php
+$product = $block->getProduct();
+$product_label_image = $product->getProductLabelImage();
+if(is_array($product_label_image) && isset($product_label_image['0']['type'])) {
+    if($product_label_image['0']['type'] == 'image') {
+        $product_label_image_name = $product_label_image['0']['name'];
+        $product_label_image_url = $product_label_image['0']['url'];
+    }
+}
+?>
+<?php if ($product_label_image_url && $product_label_image_name): ?>
+    <div class="product_label_image">
+        <label class="label"><span><strong><?= __('Product Label Image: ')?></strong>
+        <img src="<?= $block->escapeHtml($product_label_image_url) ?>" alt="<?= $block->escapeHtml($product_label_image_name) ?>">
+        </span></label>
+    </div>
+<?php endif; ?>

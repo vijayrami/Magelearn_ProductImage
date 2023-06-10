@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magelearn\ProductImage\Model\Product\Attribute\Backend\ImageUploader">
+        <arguments>
+            <argument name="imageIO" xsi:type="object">Magelearn\ProductImage\Model\Virtual\ImageIO</argument>
+        </arguments>
+    </type>
+    <type name="Magelearn\ProductImage\Controller\Adminhtml\Image\Upload">
+        <arguments>
+            <argument name="imageIO" xsi:type="object">Magelearn\ProductImage\Model\Virtual\ImageIO</argument>
+        </arguments>
+    </type>
+    <virtualType name="Magelearn\ProductImage\Model\Virtual\ImageIO" type="Magelearn\ProductImage\Model\ImageIO">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">catalog/tmp/product/labels</argument>
+            <argument name="basePath" xsi:type="string">catalog/product/labels</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="png" xsi:type="string">png</item>
+                <item name="svg" xsi:type="string">svg</item>
+                <item name="gif" xsi:type="string">gif</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>
